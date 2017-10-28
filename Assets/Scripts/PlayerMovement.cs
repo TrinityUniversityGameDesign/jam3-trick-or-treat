@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool facingRight = true;
 
 	private Rigidbody2D theRigidBody;
-
+    //private bool notHittingObst = true;
 
 	void Start () {
 		//pos = transform.position; 
@@ -30,14 +30,21 @@ public class PlayerMovement : MonoBehaviour {
 		}  else if (inputX < 0 && facingRight) {
 			Flip ();
 		}
-
-		if (Mathf.Abs (inputX) > 0) {
-			theRigidBody.velocity = new Vector3(inputX*speed,0f, 0f);
-			//pos += Vector3.right * inputX * Time.deltaTime * speed;
-		} else {
-			//pos += Vector3.up * inputY * Time.deltaTime * speed;
-			theRigidBody.velocity = new Vector3(0f,inputY*speed, 0f);
-		}
+        /*
+        if (notHittingObst)
+        {
+        */
+            if (Mathf.Abs(inputX) > 0)
+            {
+                theRigidBody.velocity = new Vector3(inputX * speed, 0f, 0f);
+                //pos += Vector3.right * inputX * Time.deltaTime * speed;
+            }
+            else
+            {
+                //pos += Vector3.up * inputY * Time.deltaTime * speed;
+                theRigidBody.velocity = new Vector3(0f, inputY * speed, 0f);
+            }
+        //}
 
 
 		//transform.position = pos;   // Move there
@@ -51,4 +58,31 @@ public class PlayerMovement : MonoBehaviour {
 
 	}
 
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Collided with: " + collision.gameObject.name);
+        notHittingObst = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Stopped colliding with: " + collision.gameObject.name);
+        notHittingObst = true;
+    }
+    */
+
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collided with: " + collision.gameObject.name);
+        //notHittingObst = false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("Stopped colliding with: " + collision.gameObject.name);
+        //notHittingObst = true;
+    }
+    
 }
