@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour {
         theRigidbody2D = GetComponent<Rigidbody2D>();
 
         // set current movement as 0 (go right)
-        Debug.Log("Current move is " + currMov + " moving right");
+        //Debug.Log("Current move is " + currMov + " moving right");
         currMov = 0;
         theRigidbody2D.AddForce(Vector2.right * speed);
     }
@@ -25,30 +25,30 @@ public class EnemyMovement : MonoBehaviour {
         {
             int nextMove = (int)Random.Range(0, 4);
 
-            Debug.Log("Next random move is : " + nextMove);
-            Debug.Log("prev move was       : " + currMov);
+            //Debug.Log("Next random move is : " + nextMove);
+            //Debug.Log("prev move was       : " + currMov);
             if (nextMove == currMov)
             {
                 nextMove = (nextMove+1) % 4;
-                Debug.Log("Same as previous move, new move is : " + nextMove);
+                //Debug.Log("Same as previous move, new move is : " + nextMove);
             }
             currMov = nextMove;
             switch (nextMove)
             {
                 case 0:
-                    Debug.Log("Move right");
+                    //Debug.Log("Move right");
                     theRigidbody2D.AddForce(Vector2.right * speed);
                     break;
                 case 1:
-                    Debug.Log("Move left");
+                    //Debug.Log("Move left");
                     theRigidbody2D.AddForce(Vector2.left * speed);
                     break;
                 case 2:
-                    Debug.Log("Move up");
+                    //Debug.Log("Move up");
                     theRigidbody2D.AddForce(Vector2.up * speed);
                     break;
                 case 3:
-                    Debug.Log("Move down");
+                    //Debug.Log("Move down");
                     theRigidbody2D.AddForce(Vector2.down * speed);
                     break;
             }

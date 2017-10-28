@@ -89,13 +89,11 @@ public class PlayerMovement : MonoBehaviour {
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
         //notHittingObst = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("Stopped colliding with: " + collision.gameObject.name);
         //notHittingObst = true;
     }
     
