@@ -13,24 +13,17 @@ public class EnemyMovement : MonoBehaviour {
 	void Start () {
         theRigidbody2D = GetComponent<Rigidbody2D>();
         hitBush = false;
+
+        // set current movement as 0 (go right)
         currMov = 0;
         theRigidbody2D.AddForce(Vector2.right * speed);
     }
 	
 	// Update is called once per frame
-	void Update () {
-        //theRigidbody2D.velocity = new Vector2(Time.deltaTime * speed, 0);
-        //transform.position = transform.position + speed * transform.forward;
-
-        //transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
-        //Debug.Log(transform.position);
-
-        
+	void Update () {        
 
         if (hitBush)
         {
-            //Debug.Log("Hit bush!!!");
-            
             int nextMove = (int)Random.Range(0, 4);
 
             Debug.Log("Next random move is : " + nextMove);
@@ -38,7 +31,7 @@ public class EnemyMovement : MonoBehaviour {
             if (nextMove == currMov)
             {
                 
-                nextMove = (nextMove++) % 4;
+                nextMove = (nextMove+1) % 4;
                 Debug.Log("Same as previous move, new move is : " + nextMove);
             }
             switch (nextMove)
@@ -78,13 +71,16 @@ public class EnemyMovement : MonoBehaviour {
     {
         hitBush = false;
     }
-
+    /*
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Grass") {
-			speed = 2.0f; 
+            theRigidbody2D.velocity = theRigidbody2D.velocity * 2 / 5f;
+			speed = 20.0f; 
 		}
 		if (col.tag == "Pavement") {
-			speed = 5.0f; 
+            theRigidbody2D.velocity = theRigidbody2D
+			speed = 50.0f; 
 		}
 	}
+    */
 }
