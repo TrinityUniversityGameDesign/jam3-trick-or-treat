@@ -5,15 +5,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	Vector3 pos;                             
-	float speed = 2.0f;   
+	float speed = 5.0f;   
 	float inputX;
 	float inputY;
 
 	bool facingRight = true;
 
+	private Rigidbody2D theRigidBody;
+
 
 	void Start () {
-		pos = transform.position; 
+		//pos = transform.position; 
+		theRigidBody = GetComponent<Rigidbody2D> ();
+
 
 	}
 
@@ -28,13 +32,15 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (Mathf.Abs (inputX) > 0) {
-			pos += Vector3.right * inputX * Time.deltaTime * speed;
+			theRigidBody.velocity = new Vector3(inputX*speed,0f, 0f);
+			//pos += Vector3.right * inputX * Time.deltaTime * speed;
 		} else {
-			pos += Vector3.up * inputY * Time.deltaTime * speed;
+			//pos += Vector3.up * inputY * Time.deltaTime * speed;
+			theRigidBody.velocity = new Vector3(0f,inputY*speed, 0f);
 		}
 
 
-		transform.position = pos;   // Move there
+		//transform.position = pos;   // Move there
 	}
 
 	void Flip() {
