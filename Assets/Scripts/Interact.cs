@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour {
-	static private int items;
+	static public int items;
 	public BoxCollider2D candy;
 	// Use this for initialization
 	void Start () {
