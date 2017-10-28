@@ -17,14 +17,23 @@ public class Interact : MonoBehaviour {
 //	}
 
 	void OnTriggerEnter2D(Collider2D candy){
-		if (candy.gameObject.name == "lollipop" || candy.gameObject.name == "chocolate" ||candy.gameObject.name == "candy corn" ||candy.gameObject.name == "candy") {
-			items = items + 1;
+		if (candy.gameObject.name == "lollipop" || candy.gameObject.name == "chocolate" || candy.gameObject.name == "candy corn" || candy.gameObject.name == "candy") {
+			items++;
+			Debug.Log (items);
 			Destroy (candy.gameObject);
-			Debug.Log ("!!!!!!!!!!!");
 		} else if (candy.gameObject.name == "enemy") {
 			items--;
-			Debug.Log (candy.gameObject.name);
 		}
 			
+	}
+	void OnTriggerExit2D(Collider2D candy){
+		
+	}
+	void OnCollisionEnter2D(Collider2D col){
+		var hit = col.gameObject;
+		if (hit.gameObject.tag == "Enemy") {
+			Debug.Log ("ENEMJIEJSL;KADFA");
+			items--;
+		}
 	}
 }
