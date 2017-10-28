@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4567582476391304}
   - component: {fileID: 212454159681096850}
-  - component: {fileID: 114127377396618832}
   - component: {fileID: 50958557924945042}
-  - component: {fileID: 114820944031652962}
   - component: {fileID: 61551608076163844}
+  - component: {fileID: 114130167175696218}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -89,18 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.62889194, y: 0.82592785}
   m_EdgeRadius: 0
---- !u!114 &114127377396618832
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076362629845166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a36e74afa4354bbab297b8b2446b8b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114820944031652962
+--- !u!114 &114130167175696218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649850a0516e1914ca7eeba1f0b4adba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
 --- !u!212 &212454159681096850
 SpriteRenderer:
   m_ObjectHideFlags: 1
