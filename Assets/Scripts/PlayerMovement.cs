@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour {
             if (Mathf.Abs(inputX) > 0)
             {
                 theRigidBody.velocity = new Vector3(inputX * speed, 0f, 0f);
+
                 //pos += Vector3.right * inputX * Time.deltaTime * speed;
             }
             else
