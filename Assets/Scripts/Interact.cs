@@ -18,13 +18,15 @@ public class Interact : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D candy){
 		if (candy.gameObject.name == "lollipop" || candy.gameObject.name == "chocolate" ||candy.gameObject.name == "candy corn" ||candy.gameObject.name == "candy") {
-			items = items++;
+			items++;
 			Debug.Log (items);
 			Destroy (candy.gameObject);
-		} else if (candy.gameObject.name == "Enemy") {
+		} else if (candy.gameObject.name == "enemy") {
 			items--;
-			Debug.Log (candy.gameObject.name);
 		}
 			
+	}
+	void OnTriggerExit2D(Collider2D candy){
+		
 	}
 }
