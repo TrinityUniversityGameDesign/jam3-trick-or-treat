@@ -43,6 +43,15 @@ public class PlayerMovement : MonoBehaviour {
 		//transform.position = pos;   // Move there
 	}
 
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.tag == "Grass") {
+			speed -= 2.0f; 
+		}
+		if (col.tag == "Pavement") {
+			speed = 5.0f; 
+		}
+	}
+
 	void Flip() {
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
