@@ -32,7 +32,6 @@ public class Interact : MonoBehaviour {
 			Destroy (candy.gameObject);
 		}
 	}
-<<<<<<< HEAD
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -60,18 +59,10 @@ public class Interact : MonoBehaviour {
 
         }
         sp.enabled = true;
+        invunerable = false;
         /*
         yield return new WaitForSeconds(3);
         invunerable = false;
         */
     }
-=======
-	void OnCollisionEnter2D(Collider2D col){
-		var hit = col.gameObject;
-		if (hit.gameObject.tag == "Enemy") {
-			Debug.Log ("ENEMJIEJSL;KADFA");
-			items--;
-		}
-	}
->>>>>>> 9a17feb69001cb9275b3f4eed9b7630c0e01a0ee
 }
