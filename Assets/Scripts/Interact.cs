@@ -17,7 +17,7 @@ public class Interact : MonoBehaviour {
 //	}
 
 	void OnTriggerEnter2D(Collider2D candy){
-		if (candy.gameObject.name == "lollipop" || candy.gameObject.name == "chocolate" ||candy.gameObject.name == "candy corn" ||candy.gameObject.name == "candy") {
+		if (candy.gameObject.name == "lollipop" || candy.gameObject.name == "chocolate" || candy.gameObject.name == "candy corn" || candy.gameObject.name == "candy") {
 			items++;
 			Debug.Log (items);
 			Destroy (candy.gameObject);
