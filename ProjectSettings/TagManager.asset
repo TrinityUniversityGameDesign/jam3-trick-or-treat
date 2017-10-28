@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Grass
   - Pavement
+  - Tag
+  - House
   layers:
   - Default
   - TransparentFX

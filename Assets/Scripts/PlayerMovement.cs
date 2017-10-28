@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -56,6 +57,9 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (col.tag == "Pavement") {
 			speed = 5.0f; 
+		}
+		if (col.tag == "House") {
+			SceneManager.LoadScene ("EndScene"); 
 		}
 	}
 
