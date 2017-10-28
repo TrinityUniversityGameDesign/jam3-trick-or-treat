@@ -2572,6 +2572,12 @@ Prefab:
       propertyPath: m_Name
       value: Ground (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 212327460244744588, guid: a2463b319aa014133b8341ab2b1f293f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fac9c915113e248418265f31bad044af,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7d1c95f742b3d04e8edca951c003dd8, type: 2}
   m_IsPrefabParent: 0
