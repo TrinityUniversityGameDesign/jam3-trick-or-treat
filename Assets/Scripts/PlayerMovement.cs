@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	float inputX;
 	float inputY;
 
+	bool facingRight = true;
+
 
 	void Start () {
 		pos = transform.position; 
@@ -19,12 +21,28 @@ public class PlayerMovement : MonoBehaviour {
 		inputX = Input.GetAxis ("Horizontal");
 		inputY = Input.GetAxis ("Vertical");
 
-		pos += Vector3.right * inputX * Time.deltaTime * speed;
+		if (inputX > 0 && !facingRight) {
+			Flip ();
+		}  else if (inputX < 0 && facingRight) {
+			Flip ();
+		}
 
-		pos += Vector3.up * inputY * Time.deltaTime * speed;
+		if (Mathf.Abs (inputX) > 0) {
+			pos += Vector3.right * inputX * Time.deltaTime * speed;
+		} else {
+			pos += Vector3.up * inputY * Time.deltaTime * speed;
+		}
 
 
 		transform.position = pos;   // Move there
+	}
+
+	void Flip() {
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+
 	}
 
 }
