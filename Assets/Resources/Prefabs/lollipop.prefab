@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4929527430879076}
   - component: {fileID: 212988823896151848}
   - component: {fileID: 61817099585435056}
-  - component: {fileID: 114347422811309066}
   m_Layer: 0
   m_Name: lollipop
   m_TagString: Untagged
@@ -54,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000008940697, y: -0.026499271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -65,20 +64,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92, y: 1.92}
+  m_Size: {x: 0.8600392, y: 1.3900193}
   m_EdgeRadius: 0
---- !u!114 &114347422811309066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1436810132000668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48929dec83e654297882e6249b5e3e30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!212 &212988823896151848
 SpriteRenderer:
   m_ObjectHideFlags: 1
