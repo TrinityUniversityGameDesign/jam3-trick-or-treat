@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	float inputX;
 	float inputY;
 
+
 	bool facingRight = true;
 
 	private Rigidbody2D theRigidBody;
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 			speed = 5.0f; 
 		}
 		if (col.tag == "House") {
+			PlayerPrefs.SetInt ("Score", GameObject.Find("score").GetComponent<Score>().score);
 			SceneManager.LoadScene ("EndScene"); 
 		}
 	}
@@ -89,11 +91,13 @@ public class PlayerMovement : MonoBehaviour {
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collided with: " + collision.gameObject.name);
         //notHittingObst = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        Debug.Log("Stopped colliding with: " + collision.gameObject.name);
         //notHittingObst = true;
     }
     

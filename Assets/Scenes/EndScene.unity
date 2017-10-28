@@ -6808,6 +6808,7 @@ GameObject:
   - component: {fileID: 733121145}
   - component: {fileID: 733121147}
   - component: {fileID: 733121146}
+  - component: {fileID: 733121149}
   - component: {fileID: 733121148}
   m_Layer: 5
   m_Name: score
@@ -6881,10 +6882,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 733121144}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875ad7948da0247489229c7779878465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &733121149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733121144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f8369dbfc9b24c2180d79e9cc8aa8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  score: 0
 --- !u!1 &804016759
 GameObject:
   m_ObjectHideFlags: 0

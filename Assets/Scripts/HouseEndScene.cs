@@ -17,6 +17,7 @@ public class HouseEndScene : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Player") {
+			PlayerPrefs.SetInt ("Score", GameObject.Find("score").GetComponent<Score>().score);
 			SceneManager.LoadScene ("EndScene"); 
 		}
 	}
