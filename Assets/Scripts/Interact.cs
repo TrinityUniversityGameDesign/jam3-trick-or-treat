@@ -29,4 +29,11 @@ public class Interact : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D candy){
 		
 	}
+	void OnCollisionEnter2D(Collider2D col){
+		var hit = col.gameObject;
+		if (hit.gameObject.tag == "Enemy") {
+			Debug.Log ("ENEMJIEJSL;KADFA");
+			items--;
+		}
+	}
 }
