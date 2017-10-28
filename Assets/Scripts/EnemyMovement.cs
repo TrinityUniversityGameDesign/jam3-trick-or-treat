@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour {
         hitBush = false;
 
         // set current movement as 0 (go right)
+        Debug.Log("Current move is " + currMov + " moving right");
         currMov = 0;
         theRigidbody2D.AddForce(Vector2.right * speed);
     }
@@ -22,18 +23,18 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {        
 
-        if (hitBush)
+        if (Mathf.Abs(theRigidbody2D.velocity.x) < 0.001 && Mathf.Abs(theRigidbody2D.velocity.y) < 0.001)
         {
             int nextMove = (int)Random.Range(0, 4);
 
             Debug.Log("Next random move is : " + nextMove);
-            Debug.Log("Curr move is        : " + currMov);
+            Debug.Log("prev move was       : " + currMov);
             if (nextMove == currMov)
             {
-                
                 nextMove = (nextMove+1) % 4;
                 Debug.Log("Same as previous move, new move is : " + nextMove);
             }
+            currMov = nextMove;
             switch (nextMove)
             {
                 case 0:
@@ -64,23 +65,25 @@ public class EnemyMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hitBush = true;
+        /*
+        Debug.Log("-------------------------------collision enter detected");
+        if (collision.gameObject.tag == "Bush")
+        {
+            Debug.Log("Hitting bush");
+            hitBush = true;
+        }
+        */
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        hitBush = false;
+        /*
+        Debug.Log("--------------------------------collision exit detected..");
+        if (collision.gameObject.tag == "Bush")
+        {
+            Debug.Log("Not hitting bush");
+            hitBush = false;
+        }
+        */
     }
-    /*
-	void OnTriggerEnter2D (Collider2D col) {
-		if (col.tag == "Grass") {
-            theRigidbody2D.velocity = theRigidbody2D.velocity * 2 / 5f;
-			speed = 20.0f; 
-		}
-		if (col.tag == "Pavement") {
-            theRigidbody2D.velocity = theRigidbody2D
-			speed = 50.0f; 
-		}
-	}
-    */
 }
