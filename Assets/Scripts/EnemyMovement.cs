@@ -42,4 +42,13 @@ public class EnemyMovement : MonoBehaviour {
     {
         hitBush = false;
     }
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.tag == "Grass") {
+			speed = 2.0f; 
+		}
+		if (col.tag == "Pavement") {
+			speed = 5.0f; 
+		}
+	}
 }

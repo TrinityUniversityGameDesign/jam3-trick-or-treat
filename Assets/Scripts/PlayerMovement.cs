@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Grass") {
-			speed -= 2.0f; 
+			speed = 2.0f; 
 		}
 		if (col.tag == "Pavement") {
 			speed = 5.0f; 
